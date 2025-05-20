@@ -29,7 +29,7 @@ async function getsongs(folder) {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`/${currfolder}/`)[1])
+            songs.push(element.href.split(`${currfolder}/`)[1])
         }
     }
     //attach songs to the list 
