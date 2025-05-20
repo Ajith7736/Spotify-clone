@@ -29,7 +29,7 @@ async function getsongs(folder) {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`${currfolder}/`)[1])
+            songs.push(element.href.split(`/${currfolder}/`)[1])
         }
     }
     //attach songs to the list 
@@ -77,7 +77,7 @@ async function displayalbums() {
     let array = Array.from(as)
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
-        if (e.href.includes("songs/")) {
+        if (e.href.includes("/songs")) {
             let folder = e.href.split("/")[4]
             //get folder data
             let a = await fetch(`songs/${folder}/info.json`)
